@@ -44,6 +44,15 @@ const mainState = {
     if (this.left.isDown) this.paddle.body.velocity.x = -300
     else if (this.right.isDown) this.paddle.body.velocity.x = 300
     else this.paddle.body.velocity.x = 0
+
+    game.physics.arcade.collide(this.paddle, this.ball)
+    game.physics.arcade.collide(this.ball, this.bricks, this.hit, null, this)
+
+    if (this.ball.y > this.paddle.y) game.state.start('main')
+  },
+
+  hit (ball, brick) {
+    brick.kill()
   }
 }
 
