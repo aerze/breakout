@@ -4,6 +4,7 @@ import game from './main'
 const mainState = {
   preload () {
     game.load.image('paddle', 'assets/paddle.png')
+    game.load.image('brick', 'assets/box.png')
   },
 
   create () {
@@ -16,6 +17,18 @@ const mainState = {
 
     this.paddle = game.add.sprite(200, 400, 'paddle')
     this.paddle.body.immovable = true
+
+    this.bricks = game.add.group()
+
+    for (var i = 0; i < 5; i++) {
+      for (var j = 0; j < 5; j++) {
+        const x = (i * 60) + 55
+        const y = (j * 35) + 55
+        const brick = game.add.sprite(x, y, 'brick')
+        brick.body.immovable = true
+        this.bricks.add(brick)
+      }
+    }
   },
 
   update () {
