@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run webpack && npm run static",
+    "webpack": "webpack -w",
+    "static": "static -H \"{\\\"Cache-Control\\\": \\\"no-cache, must-revalidate\\\"}\" ./public",
+    "test": "standard ./src"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,26 @@
   "bugs": {
     "url": "https://github.com/aerze/breakout/issues"
   },
-  "homepage": "https://github.com/aerze/breakout#readme"
+  "homepage": "https://github.com/aerze/breakout#readme",
+  "dependencies": {
+    "phaser-ce": "^2.8.8",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.8.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "expose-loader": "^0.7.3",
+    "node-static": "^0.7.10",
+    "standard": "^10.0.3",
+    "webpack": "^3.6.0"
+  }
 }
