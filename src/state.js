@@ -4,10 +4,14 @@ import game from './main'
 const mainState = {
   preload () {
     game.load.image('paddle', 'assets/paddle.png')
+<<<<<<< 01a7ec5329ba663af69619f4c127391dca6ccab2
 <<<<<<< 29db218457f6382d280b8d4e0633925a088006c7
     game.load.image('brick', 'assets/box.png')
 =======
 >>>>>>> adds paddle with controls
+=======
+    game.load.image('brick', 'assets/box.png')
+>>>>>>> add bricks
   },
 
   create () {
@@ -33,6 +37,7 @@ const mainState = {
         this.bricks.add(brick)
       }
     }
+<<<<<<< 01a7ec5329ba663af69619f4c127391dca6ccab2
 =======
 
     this.left = game.input.keyboard.addKey(Phaser.Keyboard.LEFT)
@@ -41,6 +46,8 @@ const mainState = {
     this.paddle = game.add.sprite(200, 400, 'paddle')
     this.paddle.body.immovable = true
 >>>>>>> adds paddle with controls
+=======
+>>>>>>> add bricks
   },
 
   update () {
